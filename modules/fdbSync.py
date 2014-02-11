@@ -11,9 +11,9 @@ class TFDBSync(AThreadDataBase):
     __DEBUG__ = False
     #........................................................................... 
     pBaseDstFDB = []
-    pBaseSrcFDB = { 'path'  : 'c:%sscat%sworkbin%sdb%sprojects.fdb' % (SLASH,SLASH,SLASH,SLASH), 'alias' : 'PROJECTS'  }        # параметры база исходных данных
+    #pBaseSrcFDB = { 'path'  : 'c:%sscat%sworkbin%sdb%sprojects.fdb' % (SLASH,SLASH,SLASH,SLASH), 'alias' : 'PROJECTS'  }        # параметры база исходных данных
     
-    pBaseDstFDB.append( { 'path'  : 'c:%sscat%sworkbin%sdb%seboards.fdb' % (SLASH,SLASH,SLASH,SLASH), 'alias' : 'EBOARDS'  }  ) # параметры базы мониторов
+    #pBaseDstFDB.append( { 'path'  : 'c:%sscat%sworkbin%sdb%seboards.fdb' % (SLASH,SLASH,SLASH,SLASH), 'alias' : 'EBOARDS'  }  ) # параметры базы мониторов
      
     dbSrcFDBConnect   = None        #
     dbDstFDBConnect_1 = None        #

@@ -121,24 +121,24 @@ class TDataServer():
                 printLog(tpl_mess_init_module_err % ( str(m_name), str(m_ex)), True, self.LogFileNameErrors, self.__DEBUG__ )
                 count_init_errors +=1
             #..................................................................................................................................
-            try:
-                m_name      = 'ThredEBoardsWriteBuffer'
-                m_caption   = 'Модуль обработки буфера данных для мониторов'
-                from modules.dbEboards     import ThreadDataBaseEBOARDS
-                self.modules.append({'module':ThreadDataBaseEBOARDS(), 'name':m_name, 'caption': m_caption})
-            except Exception as m_ex:
-                printLog(tpl_mess_init_module_err % ( str(m_name), str(m_ex)), True, self.LogFileNameErrors, self.__DEBUG__ )
-                count_init_errors +=1
+            #try:
+                #m_name      = 'ThredEBoardsWriteBuffer'
+                #m_caption   = 'Модуль обработки буфера данных для мониторов'
+                #from modules.dbEboards     import ThreadDataBaseEBOARDS
+                #self.modules.append({'module':ThreadDataBaseEBOARDS(), 'name':m_name, 'caption': m_caption})
+            #except Exception as m_ex:
+                #printLog(tpl_mess_init_module_err % ( str(m_name), str(m_ex)), True, self.LogFileNameErrors, self.__DEBUG__ )
+                #count_init_errors +=1
             
             #..................................................................................................................................
-            try:
-                m_name      = 'DBSync'
-                m_caption   = 'Модуль репликации данных'            
-                from modules.fdbSync  import TFDBSync
-                self.modules.append({'module':TFDBSync(), 'name':m_name, 'caption': m_caption})
-            except Exception as m_ex:
-                printLog(tpl_mess_init_module_err % ( str(m_name), str(m_ex)) , True, self.LogFileNameErrors, self.__DEBUG__)
-                count_init_errors +=1
+            #try:
+                #m_name      = 'DBSync'
+                #m_caption   = 'Модуль репликации данных'
+                #from modules.fdbSync  import TFDBSync
+                #self.modules.append({'module':TFDBSync(), 'name':m_name, 'caption': m_caption})
+            #except Exception as m_ex:
+                #printLog(tpl_mess_init_module_err % ( str(m_name), str(m_ex)) , True, self.LogFileNameErrors, self.__DEBUG__)
+                #count_init_errors +=1
             #..................................................................................................................................
             try:
                 m_name      = 'WEB-Server'

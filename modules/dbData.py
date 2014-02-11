@@ -11,8 +11,8 @@ class ThreadDataBaseData(AThreadDataBase):
     def __init__(self):
         
         AThreadDataBase.__init__(self)
-        self.pBase['path']  = 'c:%sscat%sworkbin%sdb%sdata.fdb' % (SLASH,SLASH,SLASH,SLASH)
-        self.pBase['alias'] = 'DATA'
+        #self.pBase['path']  = 'c:%sscat%sworkbin%sdb%sdata.fdb' % (SLASH,SLASH,SLASH,SLASH)
+        #self.pBase['alias'] = 'DATA'
         
         self.CommitTimeOut      = 500 # milisecond
         self.commitRecordCount  = 100
@@ -76,10 +76,10 @@ class ThreadDataBaseData(AThreadDataBase):
                 if (obj.LastPoint.LAT == None) or (obj.LastPoint.LAT < 3000) or (obj.LastPoint.LAT > 7000):
                     raise Exception ("Некорректное значение последней координате долготы (%s)" % str(obj.LastPoint.LAT))
                     
-                if  self.ExecQuery(" EXECUTE PROCEDURE APPEND_BASE_DATA(%d, %d, %s, '%s', %f, %f, %f, 0, '%s'); "
+                if  self.ExecQuery(" SELECT \"APPEND_BASE_DATA\"(CAST(%d AS smallint), CAST(%d AS smallint), %s, CAST('%s' AS timestamp with time zone), %f, %f, %f, 0, '%s'); "
                                                 % (
-                                                     obj.Pid
-                                                    ,obj.Oid
+                                                     obj.Oid
+                                                    ,obj.Pid
                                                     ,str(obj.Phone)
                                                     ,str(obj.LastTime)
                                                     ,obj.LastPoint.LON
@@ -114,10 +114,10 @@ class ThreadDataBaseData(AThreadDataBase):
                 if obj.Route.PrevStationTime == None:
                     raise Exception ("Нет Сведений о времени пред. остановки(%s)" % str(obj.Route.PrevStationTime))
                 
-                if  self.ExecQuery(" EXECUTE PROCEDURE APPEND_BUS_DATA  (%d, %d, '%s', %d, %d, '%s', '%s', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''); "
+                if  self.ExecQuery(" SELECT \"APPEND_BUS_DATA\"(%d, %d, '%s', %d, %d, CAST('%s' AS timestamp with time zone), CAST('%s' AS timestamp with time zone)); "
                                                 % (
-                                                     obj.Pid
-                                                    ,obj.Oid
+                                                     obj.Oid
+                                                    ,obj.Pid
                                                     ,str(obj.Phone)
                                                     ,obj.Route.LastRoute
                                                     ,obj.Route.LastStation
@@ -157,25 +157,29 @@ class ThreadDataBaseData(AThreadDataBase):
             for obj in inbuf[:lenSnapshot]:
                 i +=1
                 if obj.Route:
-                    s = " EXECUTE PROCEDURE APPEND_BUS_DATA  (%d, %d, '%s', %d, %d, '%s', '%s', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''); "  % (
-                                                     obj.Pid
-                                                    ,obj.Oid
+                    s = " SELECT \"APPEND_BUS_DATA\"(%d, %d, '%s', %d, %d, CAST('%s' AS timestamp with time zone), CAST('%s' AS timestamp with time zone)); " % (
+                                                     obj.Oid
+                                                    ,obj.Pid
                                                     ,str(obj.Phone)
                                                     ,obj.Route.LastRoute
                                                     ,obj.Route.LastStation
                                                     ,obj.Route.LastStationTime
-                                                    ,obj.Route.PrevStationTime)
+                                                    ,obj.Route.PrevStationTime
+
+
+                                                  )
                 else:
-                    s = " EXECUTE PROCEDURE APPEND_BASE_DATA(%d, %d, %s, '%s', %f, %f, %f, 0, '%s'); "  % (
-                                                     obj.Pid
-                                                    ,obj.Oid
+                    s = " SELECT \"APPEND_BASE_DATA\"(CAST(%d AS smallint), CAST(%d AS smallint), %s, CAST('%s' AS timestamp with time zone), %f, %f, %f, 0, '%s'); " % (
+                                                     obj.Oid
+                                                    ,obj.Pid
                                                     ,str(obj.Phone)
                                                     ,str(obj.LastTime)
                                                     ,obj.LastPoint.LON
                                                     ,obj.LastPoint.LAT
                                                     ,obj.Speed
 
-                                                    ," ")
+                                                    ," "
+                                                  )
                 if i % RecCommitSnapshotBuffer :
                     s = s + ' commit;'
                     

@@ -12,8 +12,8 @@ class ThreadDataBasePj(AThreadDataBase):
     def __init__(self):
         
         AThreadDataBase.__init__(self)
-        self.pBase['path']  = 'c:%sscat%sworkbin%sdb%sprojects.fdb' % (SLASH,SLASH,SLASH,SLASH)
-        self.pBase['alias'] = 'PROJECTS'
+        #self.pBase['path']  = 'c:%sscat%sworkbin%sdb%sprojects.fdb' % (SLASH,SLASH,SLASH,SLASH)
+        #self.pBase['alias'] = 'PROJECTS'
         
         self.CommitTimeOut      = 500 # milisecond
         self.commitRecordCount  = 1
@@ -49,13 +49,13 @@ class ThreadDataBasePj(AThreadDataBase):
                         
                         if is_update:
                             
-                            self.ExecQuery("""  UPDATE OBJECTS O
-                                                SET 
-                                                    O.LAST_TIME_ = '%s'
-                                                    ,O.LAST_LON_ = %f
-                                                    ,O.LAST_LAT_ = %f
-                                                    ,O.LAST_SPEED_ = %f
-                                                WHERE O.IDS_ = %d; """
+                            self.ExecQuery("""  UPDATE "Objects"
+                                                SET
+                                                    "Objects"."Last_Time" = '%s'
+                                                    ,"Objects"."Last_Lon" = %f
+                                                    ,"Objects"."Last_Lat" = %f
+                                                    ,"Objects"."Last_Speed" = %f
+                                                WHERE "Objects"."IDs" = %d; """
                                             % (
                                                 i.LastTime
                                                 ,i.LastPoint.LON
@@ -91,13 +91,13 @@ class ThreadDataBasePj(AThreadDataBase):
 
                         if is_route_update:
 
-                            self.ExecQuery("""  UPDATE OBJECTS O
+                            self.ExecQuery("""  UPDATE "Objects"
                                                 SET
-                                                    O.LAST_STATION_ = %d
-                                                    ,O.LAST_STATION_TIME_ = '%s'
-                                                    ,O.LAST_ROUT_ = %d
+                                                    "Objects"."Last_Station" = %d
+                                                    ,"Objects"."Last_Station_Time = '%s'
+                                                    ,"Objects"."Last_Route" = %d
                                                     
-                                                WHERE O.IDS_ = %d; """
+                                                WHERE "Objects"."IDs" = %d; """
                                             % (
                                                 i.Route.LastStation
                                                 ,i.Route.LastStationTime

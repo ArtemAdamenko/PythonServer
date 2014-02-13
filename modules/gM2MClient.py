@@ -8,6 +8,7 @@ from core.gGeneral import printLog
 from defines.gDefines import *
 from modules.dbOnline import ThreadDataBasePj
 from modules.dbData import ThreadDataBaseData
+from core.gDB import AThreadDataBase
 #------------------------------------------------------#
 class talkToClientM2M (netClient):
     #...........................................................................
@@ -130,7 +131,7 @@ class talkToClientM2M (netClient):
                         res[a[0].upper()] = 0.0
                         printLog(self.getName()+":Ошибка определения скорости в пакете:"+str(e), True, self.LogFileName)
                         printLog(self.getName()+":Ошибка определения скорости в пакете:"+str(e), True, self.LogFileNameErrors)
-                        
+
                         
                 if (a[0].upper() == 'LON') or (a[0].upper() == 'LAT'):
                     try:
@@ -143,6 +144,7 @@ class talkToClientM2M (netClient):
                         printLog(self.getName()+":Входные данные = \"%s\"" % str(a), True, self.LogFileNameErrors)
                         
                         res['VALID']=False
+
         return res
     def IdentPackageType(self, data):
         pkgType = PKG_UNKNOWN
@@ -201,7 +203,28 @@ class talkToClientM2M (netClient):
         try:
             rec = self.lastBlockData
             
-            
+            if self.DataBaseConnect():
+                Stations = []
+                #Granits = 0
+                Objects = 0
+                R = 30
+                #Получаем OIDs по номеру блока Получение маршрута по объекту
+                self.ExecQuery("""SELECT "Objects"."Last_Route", "Objects"."Proj_ID", "Objects"."IDs", "Objects"."Obj_ID" FROM "Objects"
+                                    WHERE EXISTS (SELECT "Granits"."OIDs" FROM "Granits" WHERE "Granits"."Block_Number" = %d AND "Granits"."OIDs" = "Objects"."IDs")""" % (rec['BLOCK_NUMBER'])
+                                       , True
+                                       , Objects
+                                       )
+                #Получение маршрута по объекту
+                #self.ExecQuery("""SELECT "Objects"."Last_Route", "Objects"."Proj_ID" FROM "Objects" WHERE "Objects"."Obj_ID" = %d;""" % (Granits.Obj_ID)
+                                       #, True
+                                       #, Objects
+                                       #)
+                #Получение остановок по маршруту
+                self.ExecQuery("""SELECT "BusStations"."Lon", "BusStations"."Lat", "BusStations"."Name" FROM "BusStations" WHERE "BusStations"."Route" = %d;""" % (Objects.Last_Route)
+                                       , True
+                                       , Stations
+                                       )
+
             if len(rec)>0:
                 if ('BLOCK_NUMBER' in rec):
                     if len(rec) > 1:
@@ -220,7 +243,16 @@ class talkToClientM2M (netClient):
                                         
                                         #o.Update(rec['TIME'], rec['LON'], rec['LAT'] , rec['SPEED'])        
                                         o.Update(rec['TIME'], rec['LAT'], rec['LON'] , rec['SPEED']) # lon и lat наоборот потому что в пакете все как обычно через жопу, бля!
-                                        
+
+                                        #проверка на вхождение в радиус остановки
+                                        for i in Stations:
+                                            temp = (Stations[i].Lon - rec['LON'])**2 + (Stations[i].Lat - rec['LAT'])**2
+                                            if temp <= R**2:
+                                                self.ExecQuery("""INSERT INTO "BusData"("BusData"."Proj_ID", "BusData"."Obj_ID", "BusData"."Route", "BusData"."Station") VALUES(%d, %d, %d, %s);""" %
+                                                               (Objects.Proj_ID, Objects.Obj_ID, Objects.Last_Route, str(Stations[i].Name))
+                                                            , False
+                                                            )
+
                                         BufferObjects.append(o)
                                         
                             #________________________________________________________________________

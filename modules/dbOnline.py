@@ -51,11 +51,11 @@ class ThreadDataBasePj(AThreadDataBase):
                             
                             self.ExecQuery("""  UPDATE "Objects"
                                                 SET
-                                                    "Objects"."Last_Time" = '%s'
-                                                    ,"Objects"."Last_Lon" = %f
-                                                    ,"Objects"."Last_Lat" = %f
-                                                    ,"Objects"."Last_Speed" = %f
-                                                WHERE "Objects"."IDs" = %d; """
+                                                    "Last_Time" = '%s'
+                                                    ,"Last_Lon" = %f
+                                                    ,"Last_Lat" = %f
+                                                    ,"Last_Speed" = %f
+                                                WHERE "IDs" = %d; """
                                             % (
                                                 i.LastTime
                                                 ,i.LastPoint.LON
@@ -93,11 +93,11 @@ class ThreadDataBasePj(AThreadDataBase):
 
                             self.ExecQuery("""  UPDATE "Objects"
                                                 SET
-                                                    "Objects"."Last_Station" = %d
-                                                    ,"Objects"."Last_Station_Time = '%s'
-                                                    ,"Objects"."Last_Route" = %d
+                                                    "Last_Station" = %d
+                                                    ,"Last_Station_Time" = '%s'
+                                                    ,"Last_Route" = %d
                                                     
-                                                WHERE "Objects"."IDs" = %d; """
+                                                WHERE "IDs" = %d; """
                                             % (
                                                 i.Route.LastStation
                                                 ,i.Route.LastStationTime

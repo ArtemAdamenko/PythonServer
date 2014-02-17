@@ -5,7 +5,7 @@ import threading
 import odbc
 import time
 import datetime
-
+import psycopg2
 #-------------------------------------------------
 class TControlOnline(threading.Thread):
     def __init__(self):
@@ -34,8 +34,9 @@ class TControlOnline(threading.Thread):
             if self.dbConnect == None :
             try:
                 printLog (self.getName() +':Подключение к базе данных "%s" ...' % ( str(self.pBase['alias'])),True, self.LogFileName)
-                _strConnect = "Driver=Firebird/InterBase(r) driver;UID=%s;PWD=%s;DBNAME=%s;" % (self.pBase['login'],self.pBase['password'], self.pBase['host'] + ':' + self.pBase['path'])
-                self.dbConnect = odbc.odbc(_strConnect)
+                #_strConnect = "Driver=Firebird/InterBase(r) driver;UID=%s;PWD=%s;DBNAME=%s;" % (self.pBase['login'],self.pBase['password'], self.pBase['host'] + ':' + self.pBase['path'])
+                #self.dbConnect = odbc.odbc(_strConnect)
+                self.dbConnect = psycopg2.connect("dbname='CDS' user='postgres' host='192.168.137.142' password='zaUgD5Lt' port='5432'")
                 printLog (self.getName() +':Подключение к базе данных "%s" ВЫПОЛНЕНО.' % ( str(self.pBase['alias'])),True, self.LogFileName)
                 return True
             except Exception as e:

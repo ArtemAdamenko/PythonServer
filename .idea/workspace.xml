@@ -13,6 +13,7 @@
     <file path="/DServer.py" changelist="9add36d3-3479-409f-9472-bbfc044d1a3d" time="1392125408409" ignored="false" />
     <file path="/fdbSync.py" changelist="9add36d3-3479-409f-9472-bbfc044d1a3d" time="1392125339042" ignored="false" />
     <file path="/gM2MClient.py" changelist="9add36d3-3479-409f-9472-bbfc044d1a3d" time="1392299086574" ignored="false" />
+    <file path="/sControl.py" changelist="9add36d3-3479-409f-9472-bbfc044d1a3d" time="1392367048140" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,59 +33,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="gM2MClient.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/modules/gM2MClient.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="158" column="45" selection-start="7550" selection-end="7550" vertical-scroll-proportion="4.589698">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dbObjects.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/dbObjects.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="8" selection-start="804" selection-end="804" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dbOnline.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/dbOnline.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="57" column="54" selection-start="2338" selection-end="2338" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="DServer.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DServer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="58" selection-start="1293" selection-end="1293" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#25#51#0" expanded="true" />
-              </folding>
+            <state line="49" column="59" selection-start="2594" selection-end="2594" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gM2MClient.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/gM2MClient.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="228" column="43" selection-start="10862" selection-end="10862" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#115#149#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gDB.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="gDB.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/gDB.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="8" selection-start="1836" selection-end="1836" vertical-scroll-proportion="0.19495413">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gCDSClient.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/gCDSClient.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="234" column="35" selection-start="10557" selection-end="10557" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dbSweep.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/dbSweep.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="85" selection-start="2448" selection-end="2448" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dbStat.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/dbStat.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="30" selection-start="882" selection-end="882" vertical-scroll-proportion="0.0">
+            <state line="65" column="33" selection-start="3114" selection-end="3114" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -104,11 +92,12 @@
         <option value="$PROJECT_DIR$/modules/dbObjects.py" />
         <option value="$PROJECT_DIR$/modules/dbSweep.py" />
         <option value="$PROJECT_DIR$/modules/dbStat.py" />
-        <option value="$PROJECT_DIR$/modules/dbOnline.py" />
         <option value="$PROJECT_DIR$/modules/dbData.py" />
         <option value="$PROJECT_DIR$/modules/fdbSync.py" />
         <option value="$PROJECT_DIR$/DServer.py" />
         <option value="$PROJECT_DIR$/modules/gM2MClient.py" />
+        <option value="$PROJECT_DIR$/modules/sControl.py" />
+        <option value="$PROJECT_DIR$/modules/dbOnline.py" />
       </list>
     </option>
   </component>
@@ -144,7 +133,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -207,6 +195,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -350,17 +339,17 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1928" height="1044" extended-state="6" />
-    <editor active="false" />
+    <frame x="-4" y="-4" width="1928" height="1044" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24972914" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15421557" sideWeight="0.67002237" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15741728" sideWeight="0.6703786" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39932886" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32997763" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32962137" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32997763" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -435,110 +424,106 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/modules/fdbSync.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="14" selection-start="2367" selection-end="2367" vertical-scroll-proportion="0.9205069" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/webControl.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="6" selection-start="763" selection-end="763" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/gListener.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="65" selection-start="3579" selection-end="3579" vertical-scroll-proportion="0.9608295" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/defines/gDefines.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.2730415">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/dbEboards.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="6" selection-start="164" selection-end="164" vertical-scroll-proportion="0.09792627" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/dbData.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="171" column="166" selection-start="10001" selection-end="10001" vertical-scroll-proportion="0.47719297" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/gCDSClient.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="234" column="35" selection-start="10557" selection-end="10557" vertical-scroll-proportion="0.0">
+        <state line="234" column="35" selection-start="10557" selection-end="10557" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/sync/data/____car_brands.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="30" selection-start="671" selection-end="671" vertical-scroll-proportion="0.37041286" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/sync/____proj_routs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="39" selection-start="344" selection-end="344" vertical-scroll-proportion="0.19495413" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/sync/data/routs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.4954128" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/sync/data/providers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/sControl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="17" selection-start="1087" selection-end="1087" vertical-scroll-proportion="0.5321101">
+          <folding>
+            <element signature="e#76#92#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/sync/data/projects.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/gGeneral.py">
+    <entry file="file://$PROJECT_DIR$/modules/sync/data/plans.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.60599077">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/nClient.py">
+    <entry file="file://$PROJECT_DIR$/modules/sync/data/____bus_stations.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.5276498">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/ASC.py">
+    <entry file="file://$PROJECT_DIR$/modules/sync/data/objects.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="32" selection-start="920" selection-end="920" vertical-scroll-proportion="-1.1730994">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/gDB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="33" selection-start="3114" selection-end="3114" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/test.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DServer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="59" selection-start="2594" selection-end="2594" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/dbOnline.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="76" selection-start="4756" selection-end="4756" vertical-scroll-proportion="0.54953915">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/defines/pkgDefines.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="194" selection-end="194" vertical-scroll-proportion="0.039170507">
+        <state line="57" column="54" selection-start="2338" selection-end="2338" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/dbObjects.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="40" selection-start="1870" selection-end="1870" vertical-scroll-proportion="0.7855505">
-          <folding>
-            <element signature="e#24#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DServer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="58" selection-start="1293" selection-end="1293" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#25#51#0" expanded="true" />
-          </folding>
+        <state line="24" column="8" selection-start="804" selection-end="804" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/gM2MClient.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="228" column="43" selection-start="10862" selection-end="10862" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#115#149#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/gDB.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="8" selection-start="1836" selection-end="1836" vertical-scroll-proportion="0.19495413">
+        <state line="158" column="45" selection-start="7550" selection-end="7550" vertical-scroll-proportion="4.589698">
           <folding />
         </state>
       </provider>
